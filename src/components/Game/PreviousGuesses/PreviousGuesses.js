@@ -1,14 +1,13 @@
 import React from "react"
 
 const PreviousGuesses = ({ guesses }) => {
-  console.log("Guesses: ", guesses)
   return (
     <div class="guess-results">
-      {guesses.map((guess) => (
-        <div key={guess} id={guess} className="guess">
-          {[...guess].map((letter, index) => (
-            <div key={index} className="cell">
-              <p>{letter}</p>
+      {guesses.map((guess, index) => (
+        <div key={index} id={guess} className="guess">
+          {guess.map((letter, index) => (
+            <div key={index} className={`cell ${letter.status}`}>
+              <p>{letter.letter}</p>
             </div>
           ))}
         </div>
