@@ -145,6 +145,7 @@ h1 {
   flex-direction: column;
   gap: 8px;
   height: 6.75rem;
+  position: relative;
 }
 
 .guess-input-wrapper label {
@@ -159,6 +160,13 @@ h1 {
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
+  text-transform: uppercase;
+}
+
+.guess-input-wrapper .guess-error {
+  display: absolute;
+  bottom: 0;
+  color: var(--color-error);
 }
 
 .banner {
