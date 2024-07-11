@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const GuessInput = ({ answer, guesses, setGuesses, error, setError }) => {
+const GuessInput = ({ gameState, guesses, setGuesses, error, setError }) => {
   const [guess, setGuess] = useState("")
 
   const handleSubmit = (event) => {
@@ -30,6 +30,7 @@ const GuessInput = ({ answer, guesses, setGuesses, error, setError }) => {
         type="text"
         autoComplete="off"
         maxLength={5}
+        disabled={gameState !== "playing"}
         value={guess}
         onChange={(e) => {
           // Input validation - only allow letters
