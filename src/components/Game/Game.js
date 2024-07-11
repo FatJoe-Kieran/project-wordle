@@ -20,8 +20,10 @@ function Game() {
       setError("Guess must be 5 characters long.")
       return
     }
-    // Use the guess from the state directly
+
+    // This is where we'll compare the guess to the answer.
     console.log({ guess })
+    setGuess("")
   }
 
   return (
