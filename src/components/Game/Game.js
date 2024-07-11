@@ -17,7 +17,7 @@ function Game() {
   return (
     <>
       <GuessInput answer={answer} guesses={guesses} setGuesses={setGuesses} error={error} setError={setError} />
-      {guesses && <PreviousGuesses guesses={guesses} />}
+      {guesses && <PreviousGuesses guesses={guesses} answer={answer} />}
     </>
   )
 }

@@ -1,13 +1,10 @@
 import React, { useState } from "react"
 
-import { checkGuess } from "../../../game-helpers"
-
 const GuessInput = ({ answer, guesses, setGuesses, error, setError }) => {
   const [guess, setGuess] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(guess)
 
     // Input validation
     if (guess.length < 5) {
@@ -20,10 +17,8 @@ const GuessInput = ({ answer, guesses, setGuesses, error, setError }) => {
       return
     }
 
-    const result = checkGuess(guess, answer)
-    console.log(result)
-    // This is where we'll compare the guess to the answer.
-    setGuesses([result, ...guesses])
+    // Add guess to guesses array
+    setGuesses([guess, ...guesses])
     setGuess("")
   }
 

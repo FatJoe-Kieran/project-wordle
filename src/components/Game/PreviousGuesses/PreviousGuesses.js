@@ -1,15 +1,14 @@
 import React from "react"
+import { NUM_OF_GUESSES_ALLOWED } from "../../../constants"
+import { range } from "../../../utils"
+import Guess from "../Guess/Guess"
 
-const PreviousGuesses = ({ guesses }) => {
+const PreviousGuesses = ({ guesses, answer }) => {
   return (
     <div class="guess-results">
-      {guesses.map((guess, index) => (
+      {range(NUM_OF_GUESSES_ALLOWED).map((guess, index) => (
         <div key={index} id={guess} className="guess">
-          {guess.map((letter, index) => (
-            <div key={index} className={`cell ${letter.status}`}>
-              <p>{letter.letter}</p>
-            </div>
-          ))}
+          <Guess key={index} guess={guesses[index] ?? undefined} answer={answer} />
         </div>
       ))}
     </div>
