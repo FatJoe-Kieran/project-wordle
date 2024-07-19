@@ -19,7 +19,6 @@ function getLetterStatus(checkedGuesses) {
   letters.forEach(({ letter, status }) => {
     const currentStatus = statuses[letter]
 
-    console.log({ letter, status, currentStatus })
     if (currentStatus === undefined) {
       statuses[letter] = status
       return
