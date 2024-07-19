@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react"
 
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants"
 import { WORDS } from "../../data"
+import { checkGuess } from "../../game-helpers"
 import { sample } from "../../utils"
 import GuessInput from "./GuessInput/GuessInput"
+import Keyboard from "./Keyboard/Keyboard"
 import PreviousGuesses from "./PreviousGuesses/PreviousGuesses"
 
 // Pick a random word on every pageload.
@@ -26,10 +28,14 @@ function Game() {
     }
   }, [guesses])
 
+  const checkedGuesses = guesses.map((guess) => checkGuess(guess, answer))
+
   return (
     <>
       <GuessInput gameState={gameState} guesses={guesses} setGuesses={setGuesses} error={error} setError={setError} />
       {guesses && <PreviousGuesses setGameState={setGameState} guesses={guesses} answer={answer} />}
+
+      <Keyboard checkedGuesses={checkedGuesses} />
 
       {gameState === "won" && (
         <div class="happy banner">

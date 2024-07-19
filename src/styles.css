@@ -238,3 +238,40 @@ h1 {
     transform: translateY(0%);
   }
 }
+
+/*
+  Keyboard
+*/
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.keyboard .letter {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  background: var(--color-gray-900);
+}
+
+.keyboard .letter.correct {
+  background: var(--color-success);
+  color: white;
+}
+.keyboard .letter.incorrect {
+  background: var(--color-gray-100);
+  color: white;
+}
+.keyboard .letter.misplaced {
+  background: var(--color-warning);
+  color: white;
+}

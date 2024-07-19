@@ -8,7 +8,7 @@ const PreviousGuesses = ({ guesses, answer }) => {
     <div class="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((guess, index) => (
         <div key={index} id={guess} className="guess">
-          <Guess key={index} guess={guesses[index] ?? undefined} answer={answer} />
+          <Guess guess={guesses[index] ?? undefined} answer={answer} />
         </div>
       ))}
     </div>
